@@ -1,0 +1,6 @@
+- Book View / Sepia View
+- Book margins like an actual book
+- 3d Page turn animations, like an actual book
+- Make images in books have transparent background by detecting the bg etc then removin
+
+- Chrome extension Base Manifest V3
