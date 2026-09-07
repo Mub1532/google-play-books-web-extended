@@ -6,4 +6,4 @@
 - Chrome extension Base Manifest V3
 
 
--- Bubble Zoom with AI or something.
+-- Bubble Zoom with AI or something/ preferably not since it should be a browser thing. eg maybe use some zooming stuff and algo to figure outlines instead.
