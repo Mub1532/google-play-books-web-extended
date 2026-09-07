@@ -4,3 +4,6 @@
 - Make images in books have transparent background by detecting the bg etc then removin
 
 - Chrome extension Base Manifest V3
+
+
+-- Bubble Zoom with AI or something.
