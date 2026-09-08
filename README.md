@@ -32,6 +32,6 @@ It works with all Book types such as flowable EPUB, fixed EPUB, Hybrid EPUB and 
 | <img width="1244" height="815" alt="image" src="https://github.com/user-attachments/assets/228d75e0-7b7e-4a3b-919d-0b2d3142b6a6" /> | <img width="1235" height="803" alt="image" src="https://github.com/user-attachments/assets/ed874707-732b-47c1-a63c-581db526929b" /> |
 
 
-**Get The Extension Here <placeholders>**
+**Get The Extension Here Note: These are placeholders for now**
 
 [![Get the Firefox Add-on](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/) [![Available in the Chrome Web Store](https://developer.chrome.com/static/docs/webstore/branding/image/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/)
