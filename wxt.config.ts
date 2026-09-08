@@ -14,4 +14,10 @@ export default defineConfig({
   },
   manifestVersion: 3,
   manifest,
+  // so it uses same profile etc
+  webExt: {
+    firefoxProfile: import.meta.env.FIREFOX_PROFILE,
+
+    keepProfileChanges: true,
+  },
 });
