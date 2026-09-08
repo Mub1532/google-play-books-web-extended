@@ -1,8 +1,8 @@
 {
-  "name": "wxt-react-starter",
-  "description": "manifest.json description",
-  "private": true,
-  "version": "0.0.0",
+  "name": "Google Play Books Extended",
+  "description": "Extension to add features to Google Play Books, such as page animations, bubble zoom, book theme etc.",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "export CHROME_PATH=$(which thorium-browser) && wxt",
