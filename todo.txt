@@ -1,5 +1,5 @@
 - Book View / Sepia View : DONE : TODO: fix messy, make efficient etc
-- Book margins like an actual book
+- Book margins like an actual book: DONE
 - 3d Page turn animations, like an actual book
 - Make images in books have transparent background by detecting the bg etc then removin
 
@@ -14,4 +14,9 @@
 - tidy up initial code like messy one i used for test etc
 - Detect if its flowable book, fixed epub or comic, cuz the stuff should not run on all
 - invert colors of book 
-- fixed invert its messed up
+- fixed invert its messed up: DONE
+- make invert work on flowable books
+- for margins stuff etc make efficient etc
+
+
+- URGENT, FIX MARGINS when its a fixed but also flowable epub

@@ -1,5 +1,5 @@
 import {
-  classToAdd,
+  bookViewClassToAdd,
   localKey,
   mainCSS,
   sepiaRowId,
@@ -23,11 +23,11 @@ export const sepiaToggleClass = "-gb-sepia-toggle";
  * @param displayName
  */
 export default async function sepiaFunction(displayName: string) {
-  injectStyle(classToAdd, mainCSS);
+  injectStyle(bookViewClassToAdd, mainCSS);
 
   const enabled = (await getStorageItem<boolean>(localKey)) ?? false;
 
-  applyClass(enabled, classToAdd);
+  applyClass(enabled, bookViewClassToAdd);
 
   console.log("hello is it: ", enabled);
 
@@ -58,7 +58,7 @@ export default async function sepiaFunction(displayName: string) {
       localKey,
       enabled,
       (newEnabled) => {
-        applyClass(newEnabled, classToAdd);
+        applyClass(newEnabled, bookViewClassToAdd);
       },
     );
 

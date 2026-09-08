@@ -38,10 +38,13 @@ export default async function invertFunction(displayName: string) {
       enabled,
       async (newEnabled) => {
         applyClass(newEnabled, invertClass);
-        if (newEnabled) {
-          const imageAlreadySet =
-            (await getStorageItem<boolean>(invertImageKey)) !== null;
-          if (!imageAlreadySet) await setStorageItem(invertImageKey, true);
+
+        await setStorageItem(invertImageKey, newEnabled);
+        applyClass(newEnabled, invertImageClass);
+
+        const imageToggleRow = document.getElementById("-gb-invert-image-row");
+        if (imageToggleRow) {
+          setToggle(imageToggleRow, ToggleSelector, newEnabled);
         }
       },
     );

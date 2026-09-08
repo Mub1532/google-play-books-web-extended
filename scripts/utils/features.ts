@@ -1,19 +1,22 @@
 import sepiaFunction from "@/scripts/sepia";
 import { getStorageItem } from ".";
+import { marginLabelId, marginRowId } from "../configs";
 import invertFunction from "../invert";
+import marginsFunction from "../margins";
 import { BookType, getBookType } from "./BookType";
+import { applyScaleProperty } from "./page";
 
 interface FeatureOptions {
   name: string;
   displayName: string;
-  script: (displayName: string) => void | Promise<void>;
+  script: (displayName: string, bookType: BookType) => void | Promise<void>;
   excludedBookTypes: BookType[];
 }
 
 class Feature {
   name: string;
   displayName: string;
-  script: (displayName: string) => void | Promise<void>;
+  script: (displayName: string, bookType: BookType) => void | Promise<void>;
   excludedBookTypes: BookType[];
 
   constructor(options: FeatureOptions) {
@@ -29,13 +32,19 @@ export const allFeatures = [
     name: "bookView",
     displayName: "Book View",
     script: sepiaFunction,
-    excludedBookTypes: [BookType.COMIC],
+    excludedBookTypes: [],
   }),
   new Feature({
     name: "invertColors",
     displayName: "Invert Colors",
     script: invertFunction,
-    excludedBookTypes: [],
+    excludedBookTypes: [BookType.FLOWABLE_EPUB, BookType.RESIZABLE_FIXED_EPUB],
+  }),
+  new Feature({
+    name: "bookMargins",
+    displayName: "Change Margins",
+    script: marginsFunction,
+    excludedBookTypes: [BookType.COMIC, BookType.FIXED_EPUB],
   }),
 ];
 
@@ -44,6 +53,16 @@ const alreadyRunFeatures = new Set<string>();
 export async function runEnabledFeatures() {
   const bookType = getBookType();
 
+  if (bookType === BookType.UNKNOWN) return;
+
+  //  if it goes in the resizable state when user changes it, set margin to 0
+  // this is the only case which is why its here
+  if (bookType === BookType.RESIZABLE_FIXED_EPUB) {
+    applyScaleProperty("--gb-page-scale", 0);
+    document.getElementById(marginRowId)?.remove();
+    document.getElementById(marginLabelId)?.remove();
+  }
+
   for (const feature of allFeatures) {
     if (feature.excludedBookTypes.includes(bookType)) continue;
     if (alreadyRunFeatures.has(feature.name)) continue;
@@ -51,7 +70,7 @@ export async function runEnabledFeatures() {
     const enabled = (await getStorageItem<boolean>(feature.name)) ?? true;
     if (enabled) {
       alreadyRunFeatures.add(feature.name);
-      feature.script(feature.displayName);
+      feature.script(feature.displayName, bookType);
     }
   }
 }
