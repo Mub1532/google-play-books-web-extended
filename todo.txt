@@ -1,4 +1,4 @@
-- Book View / Sepia View
+- Book View / Sepia View : DONE : TODO: fix messy, make efficient etc
 - Book margins like an actual book
 - 3d Page turn animations, like an actual book
 - Make images in books have transparent background by detecting the bg etc then removin
@@ -7,3 +7,11 @@
 
 
 -- Bubble Zoom with AI or something/ preferably not since it should be a browser thing. eg maybe use some zooming stuff and algo to figure outlines instead.
+
+
+==
+
+- tidy up initial code like messy one i used for test etc
+- Detect if its flowable book, fixed epub or comic, cuz the stuff should not run on all
+- invert colors of book 
+- fixed invert its messed up

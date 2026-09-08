@@ -1,3 +1,7 @@
-# WXT + React
+in early alpha stages do not use yet
 
-This template should help get you started developing with React in WXT.
+# Google Play Books Extended Plugin
+
+plugin to add features to google play books web version.
+
+features such as 3d page animation, book view, sepia view, margins, bubble zoom etc
