@@ -1,10 +1,4 @@
-export enum BookType {
-  FIXED_EPUB,
-  RESIZABLE_FIXED_EPUB,
-  FLOWABLE_EPUB,
-  COMIC,
-  UNKNOWN,
-}
+import { BookType } from "@/types/books";
 
 function isComicBook(renderedPage: Element): boolean {
   const segmentDiv = renderedPage.querySelector(":scope > div.gb-segment");

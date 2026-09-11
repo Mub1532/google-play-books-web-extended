@@ -5,11 +5,11 @@ import {
   marginRowId,
   marginStep,
   maxMargins,
-} from "@/scripts/configs";
-import { getStorageItem, injectStyle } from "@/scripts/utils";
-import { useWatcher } from "@/scripts/utils/observer";
-import { applyScaleProperty, createStepperRow } from "@/scripts/utils/page";
-import { BookType } from "../utils/BookType";
+} from "@/config/contentConfig";
+import type { BookType } from "@/types/books";
+import { getStorageItem, injectStyle } from "@/utils";
+import { useWatcher } from "@/utils/observer";
+import { applyMarginScale, createStepperRow } from "@/utils/page";
 
 export const lineHeightsSelector = "mat-dialog-content > label";
 
@@ -20,7 +20,7 @@ export default async function marginsFunction(
   injectStyle("-gb-margin-style", marginCSS);
 
   const margin = (await getStorageItem<number>(marginLocalKey)) ?? 0;
-  applyScaleProperty("--gb-page-scale", margin);
+  applyMarginScale("--gb-page-scale", margin);
 
   useWatcher(() => {
     if (document.getElementById(marginRowId)) return;
@@ -37,7 +37,7 @@ export default async function marginsFunction(
       storageKey: marginLocalKey,
       initialValue: margin,
       onChange: (newMargin) => {
-        applyScaleProperty("--gb-page-scale", newMargin);
+        applyMarginScale("--gb-page-scale", newMargin);
       },
     });
   });

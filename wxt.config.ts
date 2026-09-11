@@ -1,16 +1,17 @@
 // import { preact } from "@preact/preset-vite";
 // import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "wxt";
-import manifest from "./config/manifest";
+import manifest from "./src/config/manifest";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
+  srcDir: "src",
   modules: ["@wxt-dev/auto-icons"],
   // vite: () => ({
   //   plugins: [tailwindcss(), preact()],
   // }),
   autoIcons: {
-    grayscaleOnDevelopment: false,
+    developmentIndicator: false,
   },
   manifestVersion: 3,
   manifest: manifest,

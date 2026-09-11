@@ -1,31 +1,11 @@
 import sepiaFunction from "@/scripts/sepia";
+import { BookType } from "@/types/books";
+import { Feature } from "@/types/features";
 import { getStorageItem } from ".";
-import { marginLabelId, marginRowId } from "../configs";
-import invertFunction from "../invert";
-import marginsFunction from "../margins";
-import { BookType, getBookType } from "./BookType";
-import { applyScaleProperty } from "./page";
-
-interface FeatureOptions {
-  name: string;
-  displayName: string;
-  script: (displayName: string, bookType: BookType) => void | Promise<void>;
-  excludedBookTypes: BookType[];
-}
-
-class Feature {
-  name: string;
-  displayName: string;
-  script: (displayName: string, bookType: BookType) => void | Promise<void>;
-  excludedBookTypes: BookType[];
-
-  constructor(options: FeatureOptions) {
-    this.name = options.name;
-    this.displayName = options.displayName;
-    this.script = options.script;
-    this.excludedBookTypes = options.excludedBookTypes;
-  }
-}
+import { marginLabelId, marginRowId } from "../config/contentConfig";
+import invertFunction from "../scripts/invert";
+import marginsFunction from "../scripts/margins";
+import { applyMarginScale } from "./page";
 
 export const allFeatures = [
   new Feature({
@@ -58,7 +38,7 @@ export async function runEnabledFeatures() {
   //  if it goes in the resizable state when user changes it, set margin to 0
   // this is the only case which is why its here
   if (bookType === BookType.RESIZABLE_FIXED_EPUB) {
-    applyScaleProperty("--gb-page-scale", 0);
+    applyMarginScale("--gb-page-scale", 0);
     document.getElementById(marginRowId)?.remove();
     document.getElementById(marginLabelId)?.remove();
   }

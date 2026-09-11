@@ -1,0 +1,7 @@
+export enum BookType {
+  FIXED_EPUB,
+  RESIZABLE_FIXED_EPUB,
+  FLOWABLE_EPUB,
+  COMIC,
+  UNKNOWN,
+}

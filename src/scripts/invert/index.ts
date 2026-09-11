@@ -5,18 +5,16 @@ import {
   invertImageKey,
   invertKey,
   ToggleSelector,
-} from "@/scripts/configs";
+} from "@/config/contentConfig";
 import {
   applyClass,
-  cleanupClonedElement,
   getStorageItem,
   injectStyle,
   setStorageItem,
-} from "@/scripts/utils";
+} from "@/utils";
 
-import { darkThemeToggleSelector } from "@/scripts/sepia";
-import { useWatcher } from "@/scripts/utils/observer";
-import { setToggle, useToggleListener } from "@/scripts/utils/page";
+import { useWatcher } from "@/utils/observer";
+import { createToggleRow, setToggle } from "@/utils/toggles";
 
 export default async function invertFunction(displayName: string) {
   injectStyle("-gb-invert-style", invertCSS);
@@ -71,31 +69,4 @@ export default async function invertFunction(displayName: string) {
     lastToggleRow.insertAdjacentElement("afterend", invertRow);
     invertRow.insertAdjacentElement("afterend", invertImageRow);
   });
-}
-
-function createToggleRow(
-  id: string,
-  className: string,
-  displayName: string,
-  storageKey: string,
-  enabled: boolean,
-  onToggle: (enabled: boolean) => void | Promise<void>,
-): Element | null {
-  const toggleRow = document.querySelector(darkThemeToggleSelector);
-  if (!toggleRow) return null;
-
-  const row = toggleRow.cloneNode(true) as Element;
-  row.id = id;
-
-  const label = row.querySelector("label span");
-  if (label) label.textContent = displayName;
-
-  row.classList.remove(darkThemeToggleSelector.replace(".", ""));
-  row.classList.add(className);
-
-  cleanupClonedElement(row);
-  setToggle(row, ToggleSelector, enabled);
-  useToggleListener(row, ToggleSelector, storageKey, enabled, onToggle);
-
-  return row;
 }
