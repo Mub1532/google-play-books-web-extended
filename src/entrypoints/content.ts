@@ -9,7 +9,6 @@ export default defineContentScript({
   matches: [
     "https://play.google.com/books/reader*",
     "https://books.googleusercontent.com/*",
-    "https://*.googleusercontent.com/books/*",
   ],
 
   runAt: "document_start",

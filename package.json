@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "export CHROME_PATH=$(which thorium-browser) && wxt",
-    "dev:firefox": "wxt -b firefox",
+    "dev:firefox": "export $(grep -v '^#' .env | xargs) && wxt -b firefox",
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
     "zip": "wxt zip",
@@ -14,9 +14,7 @@
     "compile": "tsc --noEmit",
     "postinstall": "wxt prepare"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@wxt-dev/auto-icons": "^1.1.2",
     "typescript": "^5.9.3",
     "vite": "^8.2.2",
     "web-ext": "^10.5.0",

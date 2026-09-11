@@ -1,7 +1,12 @@
 log for unpacked size in build:
+note: remember each feature point kb should be bigger than prev, cuz more features
 
-note: icons around 10kb
-
+-- feature point 1
+initial prod size: 132 kB
 current prod size : 43.72 kB
 current size 10/09/20226: 34.61 kB
 current size 11/09/20226: 33.60 kB
+current size 11/09/2026 - 01:11am - 26.28kb
+
+-- Feature point 2
+current size
