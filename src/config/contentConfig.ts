@@ -7,8 +7,6 @@ export const sepiaRowId = "-gb-sepia-row";
 
 export const invertClass = "-gb-invert";
 export const invertKey = "invert-colors-enabled";
-export const invertImageClass = "-gb-invert-image";
-export const invertImageKey = "invert-image-colors-enabled";
 
 //  CSS for book view/ sepia view
 export const mainCSS = `
@@ -114,20 +112,8 @@ html body.${bookViewClassToAdd} reader-page {
 
 //  invert stuff
 export const invertCSS = `
-body.${invertClass}:not(.${invertImageClass}) reader-page.shown reader-rendered-page > div.gb-segment > div:nth-child(2) > *:not(img) {
+body.${invertClass} reader-page.shown reader-rendered-page > div.gb-segment > div:nth-child(2) {
   filter: invert(1) !important;
-}
-
-body.${invertClass}.${invertImageClass} reader-page.shown reader-rendered-page > div.gb-segment > div:nth-child(2) {
-  filter: invert(1) !important;
-}
-
-body:not(.${invertClass}).${invertImageClass} reader-page.shown reader-rendered-page > div.gb-segment img {
-  filter: invert(1) !important;
-}
-
-#-gb-invert-image-row {
-  margin: 24px 0 !important;
 }
 `;
 
@@ -149,3 +135,7 @@ export const marginRowId = "-gb-margin-row";
 export const marginLabelId = "-gb-margin-label";
 export const maxMargins = 30;
 export const marginStep = 2;
+
+export const decreaseLineHeightSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.67 4v6.893l-2.12-2.12-1.88 1.894L8.003 16 2.67 21.333l1.88 1.88 2.12-2.106V28h2.667v-6.893l2.12 2.12 1.88-1.894L8.003 16l5.334-5.333-1.88-1.88-2.12 2.106V4H6.67zm22.667 8H14.67V9.333h14.667V12zM14.67 17.333h14.667v-2.666H14.67v2.666zm14.667 5.334H14.67V20h14.667v2.667z" fill="currentColor"></path></svg>`;
+
+export const increaseLineHeightSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.004 10.767V22.14l2.12-2.155 1.88 1.923-5.334 5.455-5.333-5.455 1.88-1.936 2.12 2.168V10.767l-2.12 2.155-1.88-1.923L8.67 5.545l5.334 5.454-1.88 1.936-2.12-2.168zm20-1.131V6.908H15.337v2.728h14.667zm0 8.181H15.337V15.09h14.667v2.727zM15.337 26h14.667v-2.727H15.337v2.727z" fill="currentColor"></path></svg>`;

@@ -1,4 +1,4 @@
-import invertFunction from "@/scripts/invert";
+import invertColours from "@/scripts/invert";
 import marginsFunction from "@/scripts/margins";
 import sepiaFunction from "@/scripts/sepia";
 import { BookType } from "@/types/books";
@@ -14,8 +14,8 @@ export const allFeatures = [
   new Feature({
     name: "invertColors",
     displayName: "Invert Colors",
-    script: invertFunction,
-    excludedBookTypes: [BookType.FLOWABLE_EPUB],
+    script: invertColours,
+    excludedBookTypes: [BookType.FLOWABLE_EPUB, BookType.RESIZABLE_FIXED_EPUB],
   }),
   new Feature({
     name: "bookMargins",

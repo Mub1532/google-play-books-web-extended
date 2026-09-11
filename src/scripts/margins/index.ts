@@ -1,4 +1,6 @@
 import {
+  decreaseLineHeightSVG,
+  increaseLineHeightSVG,
   marginCSS,
   marginLabelId,
   marginLocalKey,
@@ -36,6 +38,9 @@ export default async function marginsFunction(
       step: marginStep,
       storageKey: marginLocalKey,
       initialValue: margin,
+      insertBeforeID: "font-size-label",
+      firstIcon: { name: "decrease_line_height", svg: decreaseLineHeightSVG },
+      secondIcon: { name: "increase_line_height", svg: increaseLineHeightSVG },
       onChange: (newMargin) => {
         applyMarginScale("--gb-page-scale", newMargin);
       },

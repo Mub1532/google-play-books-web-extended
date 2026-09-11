@@ -54,10 +54,15 @@ export function createStepperRow(
     storageKey,
     initialValue,
     onChange,
+    insertBeforeID,
+    firstIcon,
+    secondIcon,
   } = options;
 
   const model = findStepperRow(labelsSelector, targetLabelText);
-  if (!model || !areIconsReady(model.ctrl)) return null;
+  if (!model) return null;
+
+  if (!firstIcon && !secondIcon && !areIconsReady(model.ctrl)) return null;
 
   const labelRow = model.label.cloneNode(true) as Element;
   labelRow.textContent = displayName;
@@ -66,6 +71,9 @@ export function createStepperRow(
   const ctrlRow = model.ctrl.cloneNode(true) as Element;
   ctrlRow.id = rowId;
   ctrlRow.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+
+  if (firstIcon) setIcon(ctrlRow, firstIcon.name, firstIcon.svg);
+  if (secondIcon) setIcon(ctrlRow, secondIcon.name, secondIcon.svg);
 
   let currentValue = initialValue;
 
@@ -109,8 +117,19 @@ export function createStepperRow(
     );
   }
 
-  model.ctrl.insertAdjacentElement("afterend", ctrlRow);
-  model.ctrl.insertAdjacentElement("afterend", labelRow);
+  if (insertBeforeID) {
+    const anchor = document.getElementById(insertBeforeID);
+    if (anchor) {
+      anchor.insertAdjacentElement("beforebegin", labelRow);
+      labelRow.insertAdjacentElement("afterend", ctrlRow);
+    } else {
+      model.ctrl.insertAdjacentElement("afterend", ctrlRow);
+      model.ctrl.insertAdjacentElement("afterend", labelRow);
+    }
+  } else {
+    model.ctrl.insertAdjacentElement("afterend", ctrlRow);
+    model.ctrl.insertAdjacentElement("afterend", labelRow);
+  }
 
   updateStepperTextDisplay(ctrlRow, currentValue);
 
@@ -125,4 +144,11 @@ export function applyMarginScale(
 ) {
   const scale = baseScale - value / divisor;
   document.documentElement.style.setProperty(propertyName, scale.toFixed(4));
+}
+
+function setIcon(container: Element, name: string, svg: string) {
+  const icon = container.querySelector(
+    `mat-icon[data-mat-icon-name="${name}"]`,
+  );
+  if (icon) icon.innerHTML = svg;
 }

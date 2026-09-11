@@ -3,9 +3,6 @@
 - 3d Page turn animations, like an actual book
 - Make images in books have transparent background by detecting the bg etc then removin
 
-- Chrome extension Base Manifest V3
-
-
 -- Bubble Zoom with AI or something/ preferably not since it should be a browser thing. eg maybe use some zooming stuff and algo to figure outlines instead.
 
 
@@ -15,8 +12,14 @@
 - Detect if its flowable book, fixed epub or comic, cuz the stuff should not run on all
 - invert colors of book 
 - fixed invert its messed up: DONE
-- make invert work on flowable books
-- for margins stuff etc make efficient etc
+- for margins stuff etc make efficient etc: done ish
 
 
 - URGENT, FIX MARGINS when its a fixed but also flowable epub
+
+
+--- FOR INVERTING
+- add a invert background, which detects background color of fixed stuff, and only inverts that
+- cuz fixed stuff in google the whole thing is an image includin background.....
+
+- no point to add invert to flowable since dark/ligjt modes exist already? maybe double check this

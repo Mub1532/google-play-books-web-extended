@@ -9,5 +9,8 @@ export interface StepperOptions {
   step?: number;
   storageKey: string;
   initialValue: number;
+  insertBeforeID?: string;
   onChange: (newValue: number) => void | Promise<void>;
+  firstIcon?: { name: string; svg: string };
+  secondIcon?: { name: string; svg: string };
 }
