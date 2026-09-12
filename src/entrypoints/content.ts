@@ -11,7 +11,7 @@ export default defineContentScript({
     "https://books.googleusercontent.com/*",
   ],
 
-  runAt: "document_start",
+  runAt: "document_idle",
 
   allFrames: true,
 
@@ -22,7 +22,9 @@ export default defineContentScript({
 
     useWatcher(() => {
       const newType = getBookType();
-      console.log("Book type is: ", BookType[newType]);
+      if (lastBookType !== newType) {
+        console.log("Book type is: ", BookType[newType]);
+      }
 
       //  if it goes in the resizable state when user changes it, set margin to 0
       // this is the only case which is why its here

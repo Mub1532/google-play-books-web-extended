@@ -5,7 +5,7 @@ let observerStarted = false;
 
 export function useWatcher(
   callback: ObserverCallback,
-  minIntervalMs: number = 50,
+  minIntervalMs: number = 20,
 ) {
   let lastRun = 0;
   const throttledCallback = () => {
