@@ -18,7 +18,7 @@ It works with all Book types such as flowable EPUB, fixed EPUB, Hybrid EPUB and 
 
 ## Screenshots / Videos
 
-**Note**: All screenshots include Public Domain Books only for copyright reasons.
+**Note**: All screenshots include Public Domain Books *where possible* for copyright reasons.
 
 ### Book View + Book Margins
 
@@ -31,6 +31,12 @@ It works with all Book types such as flowable EPUB, fixed EPUB, Hybrid EPUB and 
 |                                                               Before                                                                |                                                                After                                                                |
 | :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 | <img width="1244" height="815" alt="image" src="https://github.com/user-attachments/assets/228d75e0-7b7e-4a3b-919d-0b2d3142b6a6" /> | <img width="1235" height="803" alt="image" src="https://github.com/user-attachments/assets/ed874707-732b-47c1-a63c-581db526929b" /> |
+
+### Invert Colours + Book View - For Fixed Epubs & Comics
+
+|                                                               Before                                                                |                                                                After                                                                |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+| <img width="1920" height="926" alt="image" src="https://github.com/user-attachments/assets/5654d25a-e5a8-44e0-8892-a883d8ff0794" /> | <img width="1920" height="921" alt="image" src="https://github.com/user-attachments/assets/1b7abdff-d128-4d9e-949d-b72096871c90" /> |
 
 # Get The Extension Here
 
