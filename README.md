@@ -18,7 +18,7 @@ It works with all Book types such as flowable EPUB, fixed EPUB, Hybrid EPUB and 
 
 ## Screenshots / Videos
 
-**Note**: All screenshots include Public Domain Books *where possible* for copyright reasons.
+**Note**: All screenshots include Public Domain Books **where possible** for copyright reasons.
 
 ### Book View + Book Margins
 
